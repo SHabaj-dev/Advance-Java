@@ -1,0 +1,6 @@
+ //JDBC Connections.
+ 
+ Package -> java.sql.*;
+ Divers -> com.mysql.jdbc.Drivers
+ Register the Divers -> forName("com.mysql.jdbc.Drivers")
+ 
