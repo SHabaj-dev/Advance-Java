@@ -1,6 +1,41 @@
  //JDBC Connections.
  
  Package -> java.sql.*;
- Divers -> com.mysql.jdbc.Drivers
+ Divers -> com.mysql.jdbc.Drivers (Not in system by default neet to download the jar file from the internet.
  Register the Divers -> forName("com.mysql.jdbc.Drivers")
+ Connetion class is an interface so we can not directly create the object of the class Connection.
+ To overcome this problem some one has creadted a method name getConnetion().
+ getConnetion() Method takes three parameters
+ 1 -> URL.
+ 2 -> userName.
+ 3 -> passWord.
  
+ Note -> getConnetion is a staic method so we need to use DriverManager class.
+ 
+ //Remember these 7 steps.
+ 1 -> import --> java.sql
+ 2 -> load and regeister Drivers -->com.mysql.jdbc.Drivers
+ 3 -> create Connetion
+ 4 -> create a statemnet
+ 5 -> execute the Querey
+ 6 -> process the result
+ 7 -> close.
+ 
+ 
+ 
+ Sample Code:
+ 
+ import java.sql.*;
+ 
+ public static void main(String[] args){
+ 	class.forName("com.mysql.jdbc.Drivers");
+ 	Connection conn = DriverManager.getConnection("URL", "userName", "Password");
+ 	Statement st = conn.createStatemnt();
+ 	ResultSet rs = st.executeQuerey("Some Sql Querey");
+ 	while(rs.next()){
+ 		print(rs.Int("Row Number"))
+ 		}
+ 	st.close();
+ 	conn.close();
+ 	}
+ 	
